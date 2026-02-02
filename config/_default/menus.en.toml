@@ -1,0 +1,9 @@
+[[main]]
+  name = "HOME"
+  url = "/"
+  weight = 10
+
+[[main]]
+  name = "BLOG"
+  url = "/posts"
+  weight = 20
