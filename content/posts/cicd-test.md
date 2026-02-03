@@ -1,6 +1,6 @@
 ---
 title: "CI/CD Pipeline Test"
-date: 2026-02-03T12:00:00+07:00
+date: 2026-02-03T11:00:00+07:00
 draft: false
 ---
 
