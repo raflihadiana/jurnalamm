@@ -1,1 +1,8 @@
+# Hugo default
+public/
+resources/
+.hugo_build.lock
 hugo
+.DS_Store
+Thumbs.db
+
