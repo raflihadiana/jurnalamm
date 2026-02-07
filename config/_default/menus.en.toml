@@ -1,9 +1,24 @@
 [[main]]
-  name = "HOME"
+  name = "Home"
   url = "/"
   weight = 10
 
 [[main]]
-  name = "BLOG"
-  url = "/posts"
+  name = "About"
+  url = "/about/"
   weight = 20
+
+[[main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 30
+
+[[main]]
+  name = "Blog"
+  url = "/posts/"
+  weight = 40
+
+[[main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 50

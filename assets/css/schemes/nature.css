@@ -1,0 +1,91 @@
+/* Mountain Meadow - Color scheme inspired by Rafli's mountain photo */
+/* Dark mode colors match home-bg-dark.svg night sky gradient */
+
+:root {
+  --color-neutral: 255, 255, 255;
+
+  /* ===========================================
+     LIGHT MODE - Light backgrounds, DARK text
+     =========================================== */
+  /* Warm creamy backgrounds to dark text */
+  --color-neutral-50: 252, 250, 245;
+  --color-neutral-100: 248, 244, 235;
+  --color-neutral-200: 240, 232, 218;
+  --color-neutral-300: 225, 215, 195;
+  --color-neutral-400: 160, 150, 135;
+  --color-neutral-500: 110, 102, 90;
+  --color-neutral-600: 75, 70, 60;
+  --color-neutral-700: 50, 46, 40;
+  --color-neutral-800: 35, 32, 28;
+  --color-neutral-900: 24, 22, 18;
+
+  /* Forest Green - Primary */
+  --color-primary-50: 235, 248, 235;
+  --color-primary-100: 210, 238, 210;
+  --color-primary-200: 165, 210, 160;
+  --color-primary-300: 120, 175, 115;
+  --color-primary-400: 85, 140, 80;
+  --color-primary-500: 60, 110, 55;
+  --color-primary-600: 48, 90, 45;
+  --color-primary-700: 40, 75, 38;
+  --color-primary-800: 32, 60, 30;
+  --color-primary-900: 24, 45, 22;
+
+  /* Golden Amber - Secondary */
+  --color-secondary-50: 255, 250, 235;
+  --color-secondary-100: 255, 242, 210;
+  --color-secondary-200: 250, 225, 170;
+  --color-secondary-300: 240, 200, 120;
+  --color-secondary-400: 220, 170, 80;
+  --color-secondary-500: 180, 135, 50;
+  --color-secondary-600: 150, 110, 40;
+  --color-secondary-700: 120, 88, 32;
+  --color-secondary-800: 95, 70, 25;
+  --color-secondary-900: 70, 52, 18;
+}
+
+/* ===========================================
+   DARK MODE - Night sky colors from home-bg-dark.svg
+   #0A1628 → #122340 → #1A3050 → #1A3A3A → #1A3020 → #0D1A10
+   =========================================== */
+.dark {
+  /* Night sky backgrounds - matching SVG gradient */
+  --color-neutral-50: 10, 22, 40;
+  /* #0A1628 - deep navy */
+  --color-neutral-100: 18, 35, 64;
+  /* #122340 - dark blue */
+  --color-neutral-200: 26, 48, 70;
+  /* between blue and teal */
+  --color-neutral-300: 26, 58, 58;
+  /* #1A3A3A - teal-ish */
+  --color-neutral-400: 45, 75, 75;
+  --color-neutral-500: 100, 120, 120;
+  --color-neutral-600: 160, 175, 175;
+  --color-neutral-700: 200, 212, 212;
+  --color-neutral-800: 228, 235, 235;
+  --color-neutral-900: 245, 250, 250;
+
+  /* Forest Green for dark mode - brighter for visibility */
+  --color-primary-50: 26, 48, 32;
+  --color-primary-100: 35, 65, 45;
+  --color-primary-200: 50, 90, 60;
+  --color-primary-300: 70, 120, 80;
+  --color-primary-400: 95, 150, 105;
+  --color-primary-500: 125, 180, 135;
+  --color-primary-600: 160, 205, 165;
+  --color-primary-700: 190, 225, 195;
+  --color-primary-800: 218, 240, 220;
+  --color-primary-900: 240, 252, 242;
+
+  /* Golden Amber for dark mode - warm accents */
+  --color-secondary-50: 70, 52, 18;
+  --color-secondary-100: 95, 70, 25;
+  --color-secondary-200: 130, 98, 35;
+  --color-secondary-300: 170, 130, 50;
+  --color-secondary-400: 200, 160, 70;
+  --color-secondary-500: 225, 185, 95;
+  --color-secondary-600: 242, 210, 130;
+  --color-secondary-700: 250, 230, 175;
+  --color-secondary-800: 255, 245, 215;
+  --color-secondary-900: 255, 252, 240;
+}

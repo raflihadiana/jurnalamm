@@ -1,0 +1,375 @@
+/* Custom Nature Theme Enhancements */
+
+/* =============================================
+   SMOOTH THEME TRANSITION - No flash/boxes
+   When switching: old theme fades out FIRST, new theme appears AFTER
+   ============================================= */
+
+/* Base transition for all elements */
+*,
+*::before,
+*::after {
+    transition:
+        background-color 0.3s ease-out,
+        background 0.3s ease-out,
+        color 0.25s ease-out,
+        border-color 0.25s ease-out,
+        fill 0.25s ease-out,
+        stroke 0.25s ease-out,
+        filter 0.4s ease-out,
+        opacity 0.25s ease-out !important;
+}
+
+/* When LEAVING light mode (going to dark): light fades out INSTANTLY */
+html:not(.dark) *,
+html:not(.dark) *::before,
+html:not(.dark) *::after {
+    transition-duration: 0.05s !important;
+    /* Almost instant */
+    transition-timing-function: ease-out !important;
+}
+
+/* When IN dark mode: elements have normal transition speed */
+html.dark *,
+html.dark *::before,
+html.dark *::after {
+    transition-duration: 0.5s !important;
+    transition-delay: 0.05s !important;
+    /* Small delay after light fades */
+    transition-timing-function: ease-in !important;
+}
+
+/* Background gradient transition */
+html {
+    transition: background 0.4s ease !important;
+}
+
+html.dark {
+    transition: background 0.5s ease-in 0.05s !important;
+}
+
+/* Background image filter */
+#background-image {
+    transition: filter 0.4s ease-in-out !important;
+}
+
+/* Force ALL light backgrounds to disappear INSTANTLY */
+html.dark .bg-neutral-50,
+html.dark .bg-neutral-100,
+html.dark .bg-neutral-200,
+html.dark .bg-neutral-300,
+html.dark .bg-white,
+html.dark [class*="bg-neutral"],
+html.dark [class*="bg-white"],
+html.dark .from-neutral,
+html.dark .to-neutral-100 {
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+    /* INSTANT - no transition */
+    background-color: transparent !important;
+}
+
+/* =============================================
+   DARK MODE FIXES - Smooth night sky gradient
+   ============================================= */
+
+/* Force night sky background on entire page in dark mode */
+html.dark {
+    background: linear-gradient(180deg,
+            rgb(10, 22, 40) 0%,
+            /* deep navy - top */
+            rgb(12, 26, 48) 20%,
+            rgb(14, 30, 55) 40%,
+            rgb(16, 34, 50) 60%,
+            rgb(14, 32, 38) 80%,
+            rgb(12, 28, 24) 100%
+            /* dark forest tint - bottom */
+        ) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+}
+
+html.dark body {
+    background-color: transparent !important;
+    min-height: 100vh;
+}
+
+/* Force transparent background on main content area */
+html.dark main,
+html.dark article,
+html.dark section,
+html.dark .prose {
+    background-color: transparent !important;
+}
+
+/* Ensure content wrapper is transparent */
+html.dark .max-w-7xl,
+html.dark .max-w-prose,
+html.dark [class*="container"],
+html.dark .relative {
+    background-color: transparent !important;
+}
+
+/* Fix the gradient overlay - use night sky colors */
+html.dark .from-neutral {
+    --tw-gradient-from: rgb(10, 22, 40) !important;
+}
+
+html.dark .to-neutral-100 {
+    --tw-gradient-to: transparent !important;
+}
+
+html.dark .bg-neutral-100\/75,
+html.dark .bg-neutral-100,
+html.dark .bg-neutral {
+    background-color: transparent !important;
+}
+
+/* =============================================
+   TEXT CONTRAST FIXES - Better readability
+   ============================================= */
+
+/* Make bold/strong text more visible in dark mode */
+html.dark strong,
+html.dark b,
+html.dark .font-bold,
+html.dark .font-semibold,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: rgb(250, 252, 248) !important;
+    font-weight: 700;
+}
+
+/* Ensure regular text has good contrast */
+html.dark .prose,
+html.dark .prose p,
+html.dark .prose li {
+    color: rgb(220, 225, 218);
+}
+
+/* Make links more visible */
+html.dark .prose a {
+    color: rgb(130, 200, 125) !important;
+}
+
+/* Smooth hover transitions for cards */
+.thumbnail_card,
+[class*="card"] {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumbnail_card:hover,
+[class*="card"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(22, 101, 52, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Enhanced link hover with nature-inspired underline animation */
+.prose a:not(.no-underline) {
+    position: relative;
+    text-decoration: none;
+    background: linear-gradient(to right,
+            rgba(34, 197, 94, 0.3),
+            rgba(74, 222, 128, 0.3));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease-out;
+}
+
+.prose a:not(.no-underline):hover {
+    background-size: 100% 2px;
+}
+
+/* Subtle glow effect on buttons */
+button,
+.btn,
+[role="button"] {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover,
+.btn:hover,
+[role="button"]:hover {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
+}
+
+/* Gentle breathing animation for decorative elements */
+@keyframes gentleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-8px);
+        opacity: 0.9;
+    }
+}
+
+/* Apply to hero icons or featured elements */
+.hero .icon,
+.logo svg {
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+/* Smooth appearance - DISABLED to prevent flash on page load/navigation */
+/* Uncomment if you want fade-in effect on first visit only */
+/*
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+article,
+.article {
+    animation: fadeInUp 0.6s ease-out;
+}
+*/
+
+/* Enhanced selection colors with nature theme */
+::selection {
+    background: rgba(34, 197, 94, 0.3);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(34, 197, 94, 0.3);
+    color: inherit;
+}
+
+/* Subtle border glow on focus for accessibility */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2),
+        0 0 0 1px rgba(34, 197, 94, 0.5);
+    border-color: rgb(34, 197, 94);
+}
+
+/* Smooth scrollbar with nature colors */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(230, 228, 218, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(34, 197, 94), rgb(22, 163, 74));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(74, 222, 128), rgb(34, 197, 94));
+}
+
+/* Dark mode scrollbar */
+html.dark ::-webkit-scrollbar-track {
+    background: rgba(41, 39, 33, 0.8);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgb(21, 128, 61), rgb(22, 101, 52));
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgb(34, 197, 94), rgb(21, 128, 61));
+}
+
+/* Page transitions disabled - was causing flash */
+/* main {
+    animation: fadeInUp 0.4s ease-out;
+} */
+
+/* Enhanced image hover effect */
+.prose img,
+.thumbnail img {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.4s ease;
+}
+
+.prose img:hover,
+.thumbnail:hover img {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+}
+
+/* =============================================
+   Theme-specific homepage background adjustments
+   ============================================= */
+
+/* Light mode: show the bright daytime gradient as-is (no filter) */
+#background-image {
+    transition: filter 0.5s ease, opacity 0.5s ease;
+    filter: none;
+    /* Ensure no filter in light mode */
+}
+
+/* Dark mode: make it significantly DARKER for night atmosphere */
+html.dark #background-image {
+    filter:
+        brightness(0.15)
+        /* VERY dark night feel */
+        saturate(0.4)
+        /* heavily desaturated for night */
+        hue-rotate(180deg)
+        /* shift to blue/night tones */
+        contrast(1.2);
+    /* boost contrast */
+}
+
+/* Dark mode overlay for extra night atmosphere */
+html.dark .fixed.inset-x-0.top-0.-z-10::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 1000px;
+    background: linear-gradient(to bottom,
+            rgba(10, 22, 40, 0.6) 0%,
+            rgba(18, 35, 64, 0.5) 30%,
+            rgba(26, 48, 58, 0.4) 60%,
+            rgba(13, 26, 16, 0.5) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Add starry effect in dark mode with subtle stars */
+html.dark .fixed.inset-x-0.top-0.-z-10::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 400px;
+    background-image:
+        radial-gradient(1px 1px at 10% 10%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(1px 1px at 20% 15%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(1.5px 1.5px at 35% 8%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+        radial-gradient(1px 1px at 50% 12%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(1px 1px at 65% 5%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(1.5px 1.5px at 80% 10%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(1px 1px at 90% 15%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        radial-gradient(1px 1px at 5% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(1px 1px at 25% 22%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(1px 1px at 55% 18%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(1px 1px at 75% 25%, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 2;
+}
