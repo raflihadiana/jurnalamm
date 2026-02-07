@@ -25,8 +25,11 @@ I'm always excited to meet new people, discuss ideas, or explore potential colla
 **🐙 GitHub** — Check out my code and projects  
 [github.com/raflihadiana](https://github.com/raflihadiana)
 
-**💬 Threads** — Casual thoughts and updates  
-[@raflihadiana](https://www.threads.net/@raflihadiana)
+**✍️ Medium** — Read my articles and thoughts  
+[medium.com/@raflihadiana](https://medium.com/@raflihadiana)
+
+**📸 Instagram** — Personal life and adventures  
+[@raflihadiana](https://instagram.com/raflihadiana)
 
 ---
 

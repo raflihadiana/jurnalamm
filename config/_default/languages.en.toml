@@ -18,11 +18,12 @@ title = "Jurnalamm"
   name = "Rafli Hadiana"
   image = "img/rafli-photos.jpg"
   imageQuality = 96
-  headline = "Hi there, <br /> I'm <strong>Rafli Hadiana</strong>"
-  bio = "A <strong>software engineer</strong> who likes to explore things. I'm focusing on <strong>server-side</strong> and <strong>cloud infrastructure</strong> because currently, I'm working as a <strong>Software Infrastructure Engineer</strong> at <strong>Gopay</strong>. While I like working on the <strong>server-side</strong>, I do quite a bit of <strong>client-side</strong> projects. I love to express my thoughts on this site. Not limited to <strong>software engineering</strong>, I like to explore other things like history, geography, mythological and philosophical stuff."
+  headline = "Cloud Engineer & FOSS Enthusiast"
+  bio = "Passionate about <strong>cloud-native</strong> technologies, <strong>Kubernetes</strong>, and <strong>5G/Future Networks</strong>. When I'm not working, I'm trail running through mountains, traveling, or writing about life. This is my creative space to express ideas. <strong>#livin'aquitelife</strong>"
   links = [
     { email = "mailto:raflihadian24@gmail.com" },
     { github = "https://github.com/raflihadiana" },
     { linkedin = "https://linkedin.com/in/raflihadiana" },
-    { threads = "https://www.threads.net/@raflihadiana" },
+    { medium = "https://medium.com/@raflihadiana" },
+    { instagram = "https://instagram.com/raflihadiana" },
   ]

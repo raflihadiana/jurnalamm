@@ -140,18 +140,38 @@ html.dark h3,
 html.dark h4,
 html.dark h5,
 html.dark h6 {
-    color: rgb(250, 252, 248) !important;
+    color: rgb(255, 255, 255) !important;
     font-weight: 700;
 }
 
-/* Ensure regular text has good contrast */
+/* Ensure ALL text has excellent contrast in dark mode */
+html.dark,
+html.dark body,
+html.dark p,
+html.dark span,
+html.dark div,
+html.dark li,
+html.dark td,
+html.dark th,
 html.dark .prose,
 html.dark .prose p,
-html.dark .prose li {
-    color: rgb(220, 225, 218);
+html.dark .prose li,
+html.dark .prose span,
+html.dark [class*="text-neutral"] {
+    color: rgb(240, 245, 240) !important;
+}
+
+/* Author bio text - make it bright and readable */
+html.dark .author-bio,
+html.dark [class*="bio"],
+html.dark .text-neutral-500,
+html.dark .text-neutral-600,
+html.dark .text-neutral-700 {
+    color: rgb(220, 230, 220) !important;
 }
 
 /* Make links more visible */
+html.dark a,
 html.dark .prose a {
     color: rgb(130, 200, 125) !important;
 }
